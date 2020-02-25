@@ -1,0 +1,30 @@
+CREATE TABLE users(
+	id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50),
+	password VARCHAR(128),
+	email VARCHAR(100)
+);
+
+CREATE TABLE wallet(
+	id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(60),
+	value NUMERIC(10,2)
+);
+
+CREATE TABLE users_wallet(
+	id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	wallet BIGINT,
+	users BIGINT,
+	FOREIGN KEY(users) REFERENCES users(id),
+	FOREIGN KEY(wallet) REFERENCES wallet(id)
+);
+
+CREATE TABLE wallet_items(
+	id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	wallet BIGINT,
+	date DATE,
+	type VARCHAR(2),
+	description VARCHAR(500),
+	value DECIMAL(10,2),
+	FOREIGN KEY(wallet) REFERENCES wallet(id)
+);

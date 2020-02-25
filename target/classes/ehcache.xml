@@ -1,0 +1,7 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd">
+	<cache name="findItemByWalletAndType" maxEntriesLocalHeap="1000" timeToLiveSeconds="1800"></cache>
+	<cache name="findUserByEmail" maxEntriesLocalHeap="40000" timeToLiveSeconds="1800"></cache>
+	<cache name="getUserIdByEmail" maxEntriesLocalHeap="40000" timeToLiveSeconds="1800"></cache>
+	<cache name="findOneWallet" maxEntriesLocalHeap="40000" timeToLiveSeconds="1800"></cache>
+	<cache name="isWalletOwnerOrThrow" maxEntriesLocalHeap="40000" timeToLiveSeconds="1800"></cache>
+</ehcache>
