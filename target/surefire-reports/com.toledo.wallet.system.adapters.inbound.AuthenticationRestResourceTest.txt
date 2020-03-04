@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.toledo.wallet.system.adapters.inbound.AuthenticationRestResourceTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.939 s - in com.toledo.wallet.system.adapters.inbound.AuthenticationRestResourceTest

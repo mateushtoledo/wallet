@@ -21,8 +21,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.toledo.wallet.system.dto.AuthenticationDTO;
 
 @SpringBootTest
-@ActiveProfiles("test")
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 public class AuthenticationRestResourceTest extends AuthenticatedTestBase {
 	private static final String URL = "/auth";

@@ -1,7 +1,7 @@
 package com.toledo.wallet.business.service;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.mockito.Mockito.doReturn;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -82,11 +82,10 @@ public class UserServicePortTest {
 	@Test(expected = UserNotFoundException.class)
 	public void testFindByInvalidEmail() {
 		// Mock find by email equals (of user repository)
-		BDDMockito.given(repository.findByEmailEquals(Mockito.anyString()))
-			.willReturn(Optional.empty());
+		String testEmail = "email22.test@toledo.com";
+		doReturn(Optional.empty()).when(repository).findByEmailEquals(Mockito.eq(testEmail));
 				
-		User user = service.findByEmail("email.test@toledo.com");
-		assertNull(user);
+		service.findByEmail(testEmail);
 	}
 	
 	@Test

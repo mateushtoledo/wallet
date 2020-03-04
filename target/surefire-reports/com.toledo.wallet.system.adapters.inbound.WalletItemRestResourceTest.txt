@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.toledo.wallet.system.adapters.inbound.WalletItemRestResourceTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.658 s <<< FAILURE! - in com.toledo.wallet.system.adapters.inbound.WalletItemRestResourceTest
+testFindBetweenDates  Time elapsed: 0.501 s  <<< FAILURE!
+java.lang.AssertionError: JSON path "$.content[0].date" expected:<2020-03-03> but was:<2020-03-04>
+	at com.toledo.wallet.system.adapters.inbound.WalletItemRestResourceTest.testFindBetweenDates(WalletItemRestResourceTest.java:142)
+
+testFindByType  Time elapsed: 0.154 s  <<< FAILURE!
+java.lang.AssertionError: JSON path "$[0].date" expected:<2020-03-03> but was:<2020-03-04>
+	at com.toledo.wallet.system.adapters.inbound.WalletItemRestResourceTest.testFindByType(WalletItemRestResourceTest.java:161)
+

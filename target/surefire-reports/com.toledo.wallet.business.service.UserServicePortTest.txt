@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.toledo.wallet.business.service.UserServicePortTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.173 s <<< FAILURE! - in com.toledo.wallet.business.service.UserServicePortTest
+testFindByInvalidEmail  Time elapsed: 0.014 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<com.toledo.wallet.business.exceptions.UserNotFoundException> but was<java.lang.AssertionError>
+	at com.toledo.wallet.business.service.UserServicePortTest.testFindByInvalidEmail(UserServicePortTest.java:89)
+

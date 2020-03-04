@@ -74,6 +74,9 @@ public class WalletItemRestResource extends AbstractResource {
 			DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 			Page<WalletItem> items = service.findBetweenDates(walletId, fmt.parse(dateFrom), fmt.parse(dateTo), pageIndex);
 			Page<WalletItemDTO> dtos = items.map(i -> new WalletItemDTO(i));
+			
+			System.out.println(dtos);
+			
 			return ResponseEntity.ok(dtos);
 		} catch (Exception e) {
 			return ResponseEntity.status(500).build();

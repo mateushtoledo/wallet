@@ -27,8 +27,8 @@ import com.toledo.wallet.system.dto.UserDTO;
 import com.toledo.wallet.system.ports.inbound.UserServicePort;
 
 @SpringBootTest
-@ActiveProfiles("test")
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 public class UserRestResourceTest {
 	@MockBean

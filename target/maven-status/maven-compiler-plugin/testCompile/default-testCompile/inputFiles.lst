@@ -1,0 +1,12 @@
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/system/ports/outbound/WalletItemRepositoryTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/system/ports/outbound/WalletRepositoryTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/system/adapters/inbound/UserRestResourceTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/system/adapters/inbound/WalletRestResourceTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/business/service/UserServicePortTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/system/ports/outbound/UserRepositoryTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/system/adapters/inbound/AuthenticationRestResourceTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/system/adapters/inbound/WalletItemRestResourceTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/WalletApplicationTests.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/business/service/WalletItemServicePortTest.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/system/adapters/inbound/AuthenticatedTestBase.java
+/home/mateus/Documents/Development/Java Projects/wallet/src/test/java/com/toledo/wallet/business/service/WalletServicePortTest.java

@@ -28,8 +28,8 @@ import com.toledo.wallet.system.dto.WalletDTO;
 import com.toledo.wallet.system.ports.inbound.WalletServicePort;
 
 @SpringBootTest
-@ActiveProfiles("test")
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 public class WalletRestResourceTest extends AuthenticatedTestBase {
 	private static final String URL = "/wallets";
