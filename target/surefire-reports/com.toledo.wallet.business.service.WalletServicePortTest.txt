@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.toledo.wallet.business.service.WalletServicePortTest
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.415 s - in com.toledo.wallet.business.service.WalletServicePortTest
