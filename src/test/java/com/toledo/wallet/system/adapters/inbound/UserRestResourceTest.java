@@ -59,7 +59,7 @@ public class UserRestResourceTest {
 				.contentType(MediaType.APPLICATION_JSON)
 				.accept(MediaType.APPLICATION_JSON)
 		)
-		.andExpect(status().isNotFound())
+		.andExpect(status().isCreated())
 		.andExpect(header().exists("location"));
 	}
 	
