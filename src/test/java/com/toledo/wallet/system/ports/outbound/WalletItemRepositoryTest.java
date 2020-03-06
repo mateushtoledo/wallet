@@ -29,6 +29,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.toledo.wallet.business.domain.User;
 import com.toledo.wallet.business.domain.Wallet;
 import com.toledo.wallet.business.domain.WalletItem;
+import com.toledo.wallet.business.domain.enums.UserRole;
 import com.toledo.wallet.business.domain.enums.WalletItemType;
 import com.toledo.wallet.system.projections.WalletItemKey;
 
@@ -53,7 +54,7 @@ public class WalletItemRepositoryTest {
 	
 	@Before
 	public void setUp() {
-		User walletOwner = new User(null, "Peter Pan", "peter.pan@systemtest.net", "8319isuducyd2", new ArrayList<>());
+		User walletOwner = new User(null, "Peter Pan", "peter.pan@systemtest.net", "8319isuducyd2", new ArrayList<>(), UserRole.ROLE_ADMIN);
 		walletOwner = userRepository.save(walletOwner);
 		
 		Wallet w = walletRepository.save(new Wallet(null, "Test wallet", BigDecimal.valueOf(7127.9), walletOwner));
@@ -75,7 +76,7 @@ public class WalletItemRepositoryTest {
 	
 	@Test
 	public void testSave() {
-		User owner = userRepository.save(new User(null, "PPTX", "pptx@tr.net", "123456", new ArrayList<>()));
+		User owner = userRepository.save(new User(null, "PPTX", "pptx@tr.net", "123456", new ArrayList<>(), UserRole.ROLE_ADMIN));
 		Wallet wlt = walletRepository.save(new Wallet(null, "Carteira 1", BigDecimal.valueOf(83172), owner));
 		WalletItem item = new WalletItem(null, wlt, DATE, TYPE, DESCRIPTION, VALUE);
 		WalletItem dbWallet = repository.save(item);

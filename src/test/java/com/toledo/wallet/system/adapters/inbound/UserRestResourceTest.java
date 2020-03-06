@@ -22,6 +22,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.toledo.wallet.business.domain.User;
+import com.toledo.wallet.business.domain.enums.UserRole;
 import com.toledo.wallet.business.exceptions.UserEmailAlreadyExistsException;
 import com.toledo.wallet.system.dto.UserDTO;
 import com.toledo.wallet.system.ports.inbound.UserServicePort;
@@ -104,12 +105,13 @@ public class UserRestResourceTest {
 		u.setEmail(USER_EMAIL);
 		u.setName(USER_NAME);
 		u.setPassword(encoder.encode(USER_PASSWORD));
+		u.setType(UserRole.ROLE_ADMIN);
 		return u;
 	}
 	
 	public String getJsonPayload(Long id, String name, String email, String password) throws JsonProcessingException {
 		// Create a User DTO
-		UserDTO dto = new UserDTO(id, name, email, encoder.encode(password));
+		UserDTO dto = new UserDTO(id, name, email, encoder.encode(password), "USER");
 		// Map user DTO to JSON
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.writeValueAsString(dto);

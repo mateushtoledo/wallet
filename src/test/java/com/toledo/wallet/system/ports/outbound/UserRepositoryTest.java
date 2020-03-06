@@ -20,6 +20,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.toledo.wallet.business.domain.User;
+import com.toledo.wallet.business.domain.enums.UserRole;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -66,7 +67,7 @@ public class UserRepositoryTest {
 	@Test(expected = DataIntegrityViolationException.class)
 	public void testSaveWithSameEmail() {
 		// Save Dracula with the same e-mail of the first created user
-		User dracula = new User(null, "Lord Dracula", USER_EMAIL, encoder.encode("123456"), new ArrayList<>());
+		User dracula = new User(null, "Lord Dracula", USER_EMAIL, encoder.encode("123456"), new ArrayList<>(), UserRole.ROLE_ADMIN);
 		repository.save(dracula);
 	}
 	

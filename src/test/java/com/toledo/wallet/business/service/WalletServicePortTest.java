@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.toledo.wallet.business.domain.User;
 import com.toledo.wallet.business.domain.Wallet;
+import com.toledo.wallet.business.domain.enums.UserRole;
 import com.toledo.wallet.business.exceptions.WalletAcessByNotOwnerException;
 import com.toledo.wallet.business.exceptions.WalletNotFoundException;
 import com.toledo.wallet.system.ports.inbound.WalletServicePort;
@@ -36,7 +37,7 @@ public class WalletServicePortTest {
 	private WalletServicePort service;
 	private static final Long VALID_ID = 1L;
 	private static final Long INVALID_ID = 2L;
-	private static final User WALLET_OWNER = new User(VALID_ID, "Wallet Owner", "owner@walletsys.net", "243412", null);
+	private static final User WALLET_OWNER = new User(VALID_ID, "Wallet Owner", "owner@walletsys.net", "243412", null, UserRole.ROLE_ADMIN);
 	
 	@Before
 	public void setUp() {

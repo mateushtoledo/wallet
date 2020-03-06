@@ -19,6 +19,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.toledo.wallet.business.domain.User;
+import com.toledo.wallet.business.domain.enums.UserRole;
 import com.toledo.wallet.business.exceptions.UserEmailAlreadyExistsException;
 import com.toledo.wallet.business.exceptions.UserNotFoundException;
 import com.toledo.wallet.system.ports.inbound.UserServicePort;
@@ -51,7 +52,7 @@ public class UserServicePortTest {
 		BDDMockito.given(repository.existsByEmail(Mockito.anyString()))
 			.willReturn(false);
 		
-		User morganFreeman = new User(null, "Morgan Freeman", "morganfreeman@actor.net", "i_am_freeman", new ArrayList<>());
+		User morganFreeman = new User(null, "Morgan Freeman", "morganfreeman@actor.net", "i_am_freeman", new ArrayList<>(), UserRole.ROLE_ADMIN);
 		morganFreeman = service.save(morganFreeman);
 		
 		assertNotNull(morganFreeman);
@@ -65,7 +66,7 @@ public class UserServicePortTest {
 			.willReturn(true);
 		
 		// Save user
-		User morganFreeman = new User(null, "Morgan Freeman", "morganfreeman@actor.net", "i_am_freeman", new ArrayList<>());
+		User morganFreeman = new User(null, "Morgan Freeman", "morganfreeman@actor.net", "i_am_freeman", new ArrayList<>(), UserRole.ROLE_USER);
 		morganFreeman = service.save(morganFreeman);
 	}
 	
@@ -108,6 +109,6 @@ public class UserServicePortTest {
 	}
 	
 	public User getUserMock() {
-		return new User(1L, "Morgan Freeman", "morganfreeman@actor.net", "i_am_freeman", new ArrayList<>());
+		return new User(1L, "Morgan Freeman", "morganfreeman@actor.net", "i_am_freeman", new ArrayList<>(), UserRole.ROLE_ADMIN);
 	}
 }

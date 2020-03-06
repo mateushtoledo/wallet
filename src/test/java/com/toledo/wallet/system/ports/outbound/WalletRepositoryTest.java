@@ -19,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.toledo.wallet.business.domain.User;
 import com.toledo.wallet.business.domain.Wallet;
+import com.toledo.wallet.business.domain.enums.UserRole;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -32,7 +33,7 @@ public class WalletRepositoryTest {
 	
 	@Before
 	public void setUp() {
-		walletOwner = new User(null, "Wallet owner", "kingofwallets@wallet.net", "123456", new ArrayList<>());
+		walletOwner = new User(null, "Wallet owner", "kingofwallets@wallet.net", "123456", new ArrayList<>(), UserRole.ROLE_ADMIN);
 		walletOwner = userRepository.save(walletOwner);
 	}
 	

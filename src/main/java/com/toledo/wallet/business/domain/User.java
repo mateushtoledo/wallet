@@ -6,12 +6,16 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.toledo.wallet.business.domain.enums.UserRole;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -40,4 +44,7 @@ public class User implements Serializable {
 	
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	private List<Wallet> wallets;
+	
+	@Enumerated(EnumType.STRING)
+	private UserRole type = UserRole.ROLE_USER;
 }

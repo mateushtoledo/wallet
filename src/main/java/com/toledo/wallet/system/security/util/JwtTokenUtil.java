@@ -60,6 +60,9 @@ public class JwtTokenUtil {
 		Map<String, Object> claims = new HashMap<>();
 		claims.put(CLAIM_KEY_USERNAME, userDetails.getUsername());
 		claims.put(CLAIM_KEY_CREATED, new Date());
+		userDetails.getAuthorities().forEach(auth -> {
+			claims.put(CLAIM_KEY_ROLE, auth.getAuthority());
+		});
 
 		return generateToken(claims);
 	}
